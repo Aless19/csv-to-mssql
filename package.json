@@ -14,10 +14,14 @@
   "contributes": {
     "commands": [
       {
-        "command": "csv-to-mssql.helloWorld",
-        "title": "Hello World"
+        "command": "csv-to-mssql.convertToInserts",
+        "title": "Convert to Inserts"
       }
     ]
+  },
+  "documentSelector": {
+    "language": "csv",
+    "scheme": "file"
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
