@@ -2,7 +2,8 @@
   "name": "csv-to-mssql",
   "displayName": "csv-to-mssql",
   "description": "Converts csv to MSSQL inserts",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "publisher": "Ales19",
   "engines": {
     "vscode": "^1.76.0"
   },
