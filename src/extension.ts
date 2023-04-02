@@ -20,12 +20,15 @@ export function activate(context: vscode.ExtensionContext) {
 	
 			//Read the active text editor's document
 			const doc = editor.document;
-	
+			
+			const splitRegex = /((?:[^,"']|"[^"]*"|'[^']*')+)/g;
+			
 			//Parse the CSV data
 			let rows: any[] = [];
 			doc.getText().split(/\r?\n/).forEach(line => {
 				if (line !== '') {
-					rows.push(line.split(','));
+					const fields = line.match(splitRegex)?.map(field => field.trim().replace(/^"(.*)"$/, '$1')) ?? [];
+					rows.push(fields);
 				}
 			});
 	
